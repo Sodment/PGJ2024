@@ -64,7 +64,7 @@ public class EnemyFOV : MonoBehaviour
                     if(hit.collider.gameObject.tag != "Player") continue;
                     Debug.DrawRay(playerRaycastHitStarter.position, (hits[i].collider.gameObject.transform.position - playerRaycastHitStarter.position).normalized * hit.distance, Color.yellow);
                     //Debug.Log("Did Hit");
-                    hits[i].collider.gameObject.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f);
+                    //hits[i].collider.gameObject.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f);
                     return hits[i].collider.gameObject;
                 }
                 return null;
