@@ -5,13 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 414096e59c870d447be75e75f3409157
+  - enabled: 1
+    path: Assets/Scenes/GRA.unity
+    guid: bc1609995fedcce4798ce316e0f03557
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: 245d68dfa1ae2344a87ae81fb2a7cd51
+  - enabled: 1
+    path: Assets/Scenes/GalyPaczaly.unity
+    guid: c50727f489445b5438dddcac5a9cc327
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
     path: Assets/OpenSeeFace 1/Scenes/OpenSeeFaceSample.unity
     guid: 313c17b74e122e044843612b1f6e2c31
-  - enabled: 1
-    path: Assets/Scenes/GalyPaczaly.unity
-    guid: c50727f489445b5438dddcac5a9cc327
   m_configObjects: {}
