@@ -12,7 +12,9 @@ public class EnemyInteraction : MonoBehaviour
 
     [SerializeField] Image meetingRemain;
     [SerializeField] GameObject barObject;
+    [SerializeField] Transform smile;
 
+    Vector3 smileLocalPos;
     bool isChecked = false;
 
     private void Start()
@@ -20,6 +22,7 @@ public class EnemyInteraction : MonoBehaviour
         if (meetingRemain == null) { Debug.LogError("Missing attach: meetingRamain"); }
         if (barObject == null) { Debug.LogError("Missing attach: barObject"); }
 
+        smileLocalPos = smile.localPosition;
         barObject.SetActive(false);
     }
 
@@ -34,6 +37,7 @@ public class EnemyInteraction : MonoBehaviour
         {
             Debug.Log("Check for meeting");
             float roll = Random.Range(-40.0f, 10.0f);
+            //float roll = Random.Range(0.0f, 10.0f);
             if (roll < 0) 
             { 
                 isChecked= true; 
@@ -56,6 +60,7 @@ public class EnemyInteraction : MonoBehaviour
         {
             timeRemain-=Time.deltaTime;
             meetingRemain.fillAmount = timeRemain / totalTime;
+            smile.localPosition = smileLocalPos + Vector3.up * Random.Range(-0.05f, 0.05f);
             yield return null;
         }
         barObject.SetActive (false);

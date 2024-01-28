@@ -763,6 +763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meetingRemain: {fileID: 576253085783832118}
   barObject: {fileID: 3197453639681452629}
+  smile: {fileID: 7115657940682901641}
 --- !u!1 &7412560584696757043
 GameObject:
   m_ObjectHideFlags: 0
