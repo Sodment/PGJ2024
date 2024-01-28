@@ -55,8 +55,11 @@ public static class Player
         if (isSmiled) { return; }
 
         sus-=susPower*Time.deltaTime;
-        if(sus < 0) { OnLastSusLost?.Invoke(); }
-        if (sus < 0) sus = 0.0f;
+        if(sus < 0) 
+        {
+            sus = 0.0f; 
+            OnLastSusLost?.Invoke();
+        }
     }
 
     public static void StartInteraction(float plannedSufferingTime)
