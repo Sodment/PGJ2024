@@ -18,6 +18,12 @@ public class EnemyFOV : MonoBehaviour
 
     public Transform defaultEyeGaze;
 
+    private void Start()
+    {
+        OnSee = new UnityEvent();
+        OnSee.AddListener(GameManager.instance.EnemySeePlayer);
+    }
+
     private void FixedUpdate()
     {
         //If player is in range, look at it
