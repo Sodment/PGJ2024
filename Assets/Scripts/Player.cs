@@ -56,6 +56,7 @@ public static class Player
 
         sus-=susPower*Time.deltaTime;
         if(sus < 0) { OnLastSusLost?.Invoke(); }
+        if (sus < 0) sus = 0.0f;
     }
 
     public static void StartInteraction(float plannedSufferingTime)
