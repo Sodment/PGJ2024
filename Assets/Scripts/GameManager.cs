@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public Sprite nonSmillingIcon, smillingIcon;
     public Image smillingImage;
+    public Animator playerAnimator;
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
         smillingImage.sprite = smileToggle ? smillingIcon : nonSmillingIcon;
 
         Player.SetSmileState(smileToggle);
+        playerAnimator.SetBool("Smiling", smileToggle);
         Player.Update();
     }
 

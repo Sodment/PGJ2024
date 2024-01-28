@@ -8,14 +8,26 @@ public class DirtyPlayerMovement : MonoBehaviour
     const float BASE_SPEED = 10;
     float speed;
 
-    public List<GameObject> FreeSideRoadObjects = new List<GameObject>();
+    public Animator playerAnimator;
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         Player.OnInteractionStarted.AddListener(StopForInteraction);
+        Player.OnInteractionStarted.AddListener(SetIdleAnimationState);
         Player.OnInteractionEnded.AddListener(EndInteraction);
+        Player.OnInteractionEnded.AddListener(SetRunningAnimationState);
         speed = BASE_SPEED;
+    }
+
+    void SetIdleAnimationState()
+    {
+        playerAnimator.SetBool("Standing", true);
+    }
+
+    void SetRunningAnimationState()
+    {
+        playerAnimator.SetBool("Standing", false);
     }
 
     // Update is called once per frame
