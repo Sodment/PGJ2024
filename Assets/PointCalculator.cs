@@ -10,11 +10,13 @@ public class PointCalculator : MonoBehaviour
     void Start()
     {
         text = gameObject.GetComponent<TMP_Text>();
+        PlayerPrefs.SetString("Points", "0.00");
     }
 
     // Update is called once per frame
     void Update()
     {
         text.text = "Points: " + playerGameObject.transform.position.z.ToString("0.00");
+        PlayerPrefs.SetString("Points", playerGameObject.transform.position.z.ToString("0.00"));
     }
 }
