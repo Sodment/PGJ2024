@@ -227,7 +227,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8a267fb8c0b340744b68f2f305340c04, type: 2}
+  - {fileID: 2100000, guid: 306661ccf847e6742932d12659a3422f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -718,6 +718,10 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   defaultEyeGaze: {fileID: 5292901433185354814}
+  normalEyeMaterial: {fileID: 2100000, guid: 306661ccf847e6742932d12659a3422f, type: 2}
+  LookAtPlayerMaterial: {fileID: 2100000, guid: 669400bdf8ea5984b82d3468f6ef58a3,
+    type: 2}
+  eyeRenderer: {fileID: 6832515577581512479}
 --- !u!54 &5267214948529865056
 Rigidbody:
   m_ObjectHideFlags: 0
