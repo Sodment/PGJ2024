@@ -14,18 +14,18 @@ public class DirtyPlayerMovement : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         Player.OnInteractionStarted.AddListener(StopForInteraction);
-        Player.OnInteractionStarted.AddListener(SetIdleAnimationState);
+        Player.OnInteractionStarted.AddListener(SetStandingAnimation);
         Player.OnInteractionEnded.AddListener(EndInteraction);
-        Player.OnInteractionEnded.AddListener(SetRunningAnimationState);
+        Player.OnInteractionEnded.AddListener(SetRunningAnimation);
         speed = BASE_SPEED;
     }
 
-    void SetIdleAnimationState()
+    void SetStandingAnimation(float _)
     {
         playerAnimator.SetBool("Standing", true);
     }
 
-    void SetRunningAnimationState()
+    void SetRunningAnimation()
     {
         playerAnimator.SetBool("Standing", false);
     }
