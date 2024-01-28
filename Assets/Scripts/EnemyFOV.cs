@@ -21,6 +21,9 @@ public class EnemyFOV : MonoBehaviour
 
     EnemyInteraction myInteraction;
 
+    public Material normalEyeMaterial, LookAtPlayerMaterial;
+    public MeshRenderer eyeRenderer;
+
     private void Start()
     {
         myInteraction = GetComponent<EnemyInteraction>();
@@ -43,10 +46,12 @@ public class EnemyFOV : MonoBehaviour
             }
             enemyEye.LookAt(player);
             OnSee.Invoke();
+            eyeRenderer.material = LookAtPlayerMaterial;
         }
         else
         {
             enemyEye.LookAt(defaultEyeGaze);
+            eyeRenderer.material = normalEyeMaterial;
         }
     }
 
