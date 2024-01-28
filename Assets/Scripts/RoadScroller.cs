@@ -49,13 +49,13 @@ public class RoadScroller : MonoBehaviour
 
         List<GameObject> builtSegment = new List<GameObject>
         {
-            Instantiate(segment.First(), new Vector3(0, 0, startPoint), Quaternion.identity)
+            Instantiate(segment.First(), new Vector3(0, 0, startPoint), Quaternion.identity, transform)
         };
         float accumulatedDistance = startPoint;
         for(int i = 1; i < segment.Count; i++)
         {
             float aligmentDistance = GetAligmentDistance(segment[i - 1], segment[i]);
-            builtSegment.Add(Instantiate(segment[i], new Vector3(0,0, accumulatedDistance + aligmentDistance), Quaternion.identity));
+            builtSegment.Add(Instantiate(segment[i], new Vector3(0,0, accumulatedDistance + aligmentDistance), Quaternion.identity, transform));
             accumulatedDistance += aligmentDistance;
         }
         List<GameObject> oldRoad = builtSegments;
