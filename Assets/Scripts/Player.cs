@@ -10,9 +10,9 @@ using UnityEngine.Events;
 
 public static class Player
 {
-    const float MAX_HP = 10;
+    const float MAX_HP = 20;
     const float HP_REGEN = 1;
-    const float MAX_SUS = 5;
+    const float MAX_SUS = 10;
     const float SUS_REGEN = 1;
 
     static float hp = MAX_HP;

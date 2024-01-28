@@ -35,6 +35,7 @@ public class EnemyFOV : MonoBehaviour
         {
             player = DetectPlayerObjectIfInRange().transform;
             float dist = (Vector3.Distance(transform.position, player.transform.position));
+            Debug.Log(dist);
             if(dist < meetingDistance)
             {
                 Debug.Log("InMeetingRange");

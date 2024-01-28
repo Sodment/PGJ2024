@@ -699,7 +699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   maxDistance: 16
-  meetingDistance: 2
+  meetingDistance: 4
   enemyEye: {fileID: 48348241680014860}
   playerRaycastHitStarter: {fileID: 8144255848428635597}
   OnSee:

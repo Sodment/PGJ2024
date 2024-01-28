@@ -33,8 +33,12 @@ public class EnemyInteraction : MonoBehaviour
         if (!isChecked)
         {
             Debug.Log("Check for meeting");
-            float roll = Random.Range(-40.0f, 20.0f);
-            if (roll < 0) { return; }
+            float roll = Random.Range(-40.0f, 10.0f);
+            if (roll < 0) 
+            { 
+                isChecked= true; 
+                return; 
+            }
             else
             {
                 Player.StartInteraction(roll);
