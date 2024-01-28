@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
         if (!smileToggle)
         {
-            Player.TakeSus(8f);
+            Player.TakeSus(15f);
         }
 
 
