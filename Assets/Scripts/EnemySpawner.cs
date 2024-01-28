@@ -37,6 +37,7 @@ public class EnemySpawner : MonoBehaviour
         {
             lastSpawnPos += forward * Random.Range(15.0f, 45.0f);
             enemys[currentIndex].transform.position = lastSpawnPos + right * Random.Range(-0.5f, 0.5f);
+            enemys[currentIndex].GetComponent<EnemyInteraction>().ResetMeetChecking();
             currentIndex = (currentIndex+1)%enemys.Count;
         }
     }

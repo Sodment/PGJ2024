@@ -9,6 +9,7 @@ public class EnemyFOV : MonoBehaviour
     public Transform player;
     //How far enemy can see
     public float maxDistance = 10f;
+    public float meetingDistance = 8f;
 
 
     public Transform enemyEye;
@@ -18,8 +19,11 @@ public class EnemyFOV : MonoBehaviour
 
     public Transform defaultEyeGaze;
 
+    EnemyInteraction myInteraction;
+
     private void Start()
     {
+        myInteraction = GetComponent<EnemyInteraction>();
         OnSee = new UnityEvent();
         OnSee.AddListener(GameManager.instance.EnemySeePlayer);
     }
@@ -30,6 +34,12 @@ public class EnemyFOV : MonoBehaviour
         if (DetectPlayerObjectIfInRange() != null)
         {
             player = DetectPlayerObjectIfInRange().transform;
+            float dist = (Vector3.Distance(transform.position, player.transform.position));
+            if(dist < meetingDistance)
+            {
+                Debug.Log("InMeetingRange");
+                myInteraction.CheckMeeting();
+            }
             enemyEye.LookAt(player);
             OnSee.Invoke();
         }

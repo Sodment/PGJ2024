@@ -19,8 +19,10 @@ public static class Player
     static float sus = MAX_SUS;
     static bool isSmiled = false;
 
-    public static UnityEvent OnLastHPLost;
-    public static UnityEvent OnLastSusLost;
+    public static UnityEvent OnLastHPLost = new UnityEvent();
+    public static UnityEvent OnLastSusLost = new UnityEvent();
+    public static UnityEvent<float> OnInteractionStarted = new UnityEvent<float>();
+    public static UnityEvent OnInteractionEnded = new UnityEvent();
 
     public static void SetSmileState(bool smile)
     {
@@ -54,6 +56,16 @@ public static class Player
 
         sus-=susPower*Time.deltaTime;
         if(sus < 0) { OnLastSusLost?.Invoke(); }
+    }
+
+    public static void StartInteraction(float plannedSufferingTime)
+    {
+        OnInteractionStarted?.Invoke(plannedSufferingTime);
+    }
+
+    public static void EndInteraction()
+    {
+        OnInteractionEnded?.Invoke();
     }
 
     public static float GetHPPercentage()
