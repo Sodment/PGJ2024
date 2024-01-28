@@ -8,6 +8,6 @@ public class LoseScript : MonoBehaviour
     public void LoadMenu()
     {
         Debug.Log("Loading menu...");
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene(0);
     }
 }
