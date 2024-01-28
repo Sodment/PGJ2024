@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using OpenSee;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -45,6 +46,15 @@ public class GameManager : MonoBehaviour
         Player.SetSmileState(smileToggle);
         playerAnimator.SetBool("Smiling", smileToggle);
         Player.Update();
+
+        Debug.LogFormat("HP: {0} SUS: {1}", Player.GetHPPercentage(), Player.GetSusPercentage());
+        //Warunek przegranej
+        if (Player.GetSusPercentage() <= 0.05f || Player.GetHPPercentage() <= 0.05f)
+        {
+            //Przegrana
+            Debug.Log("Przegrana");
+            SceneManager.LoadScene(2);
+        }
     }
 
     public void EnemySeePlayer()
