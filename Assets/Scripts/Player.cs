@@ -29,6 +29,13 @@ public static class Player
         isSmiled = smile;
     }
 
+    public static void ResetPlayerValues()
+    {
+        hp = MAX_HP;
+        sus = MAX_SUS;
+        isSmiled = false;
+    }
+
     public static void Update()
     {
         if(isSmiled)
